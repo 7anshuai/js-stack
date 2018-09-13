@@ -1,0 +1,80 @@
+{
+  "name": "js-stack-from-scratch",
+  "version": "0.1.0",
+  "description": "To build a modern JavaScript stack",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "compression": "^1.7.3",
+    "express": "^4.16.3",
+    "immutable": "4.0.0-rc.2",
+    "isomorphic-fetch": "^2.2.1",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-helmet": "^5.2.0",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.0",
+    "redux-actions": "^2.6.1",
+    "redux-thunk": "^2.3.0",
+    "rimraf": "^2.6.2",
+    "webpack": "^4.16.3",
+    "webpack-cli": "^3.1.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.6",
+    "babel-jest": "^23.4.2",
+    "cross-env": "^5.2.0",
+    "eslint": "^4.19.1",
+    "eslint-plugin-compat": "^2.5.1",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.9.1",
+    "fetch-mock": "^7.0.0-alpha.6",
+    "husky": "^0.14.3",
+    "jest": "^23.4.2",
+    "nodemon": "^1.18.3",
+    "react-hot-loader": "^4.3.4",
+    "redux-mock-store": "^1.5.3",
+    "webpack-dev-server": "^3.1.5"
+  },
+  "browserslist": [
+    "> 1%"
+  ],
+  "jest": {
+    "testURL": "http://localhost"
+  },
+  "scripts": {
+    "start": "node lib/server",
+    "build": "rimraf lib dist && babel src -d lib --ignore .test.js && cross-env NODE_ENV=production webpack -p --progress",
+    "dev:client": "webpack-dev-server --progress",
+    "dev:server": "nodemon -e js,jsx --ignore lib --ignore dist --exec babel-node src/server",
+    "lint": "eslint src webpack.config.babel.js --ext .js,.jsx",
+    "lint:fix": "eslint src --fix",
+    "precommit": "npm test",
+    "prepush": "npm test",
+    "prestart": "npm run -s build",
+    "pretest": "npm run lint",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/7anshuai/js-stack.git"
+  },
+  "keywords": [
+    "travis-ci",
+    "ci"
+  ],
+  "author": "Tan Shuai",
+  "bugs": {
+    "url": "https://github.com/7anshuai/js-stack/issues"
+  },
+  "homepage": "https://github.com/7anshuai/js-stack#readme"
+}
