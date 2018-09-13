@@ -1,13 +1,14 @@
 // @flow
 
 import React from 'react'
+import { Button } from 'react-toolbox/lib/button'
 
 type Props = {
   label: string,
   handleClick: Function,
 }
 
-const Button = ({ label, handleClick }: Props) =>
-  <button onClick={handleClick}>{label}</button>
+const HelloButton = ({ label, handleClick }: Props) =>
+  <Button onClick={handleClick} label={label} raised primary />
 
-export default Button
+export default HelloButton

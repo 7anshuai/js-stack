@@ -20,11 +20,24 @@ export default {
   module: {
     rules: [
       { test: /\.(js|jsx)$/, use: 'babel-loader', exclude: /node_modules/ },
+      { test: /\.css$/, use: [
+        'style-loader',
+        {
+          loader: 'css-loader',
+          options: {
+            modules: true,
+            sourceMap: true,
+            importLoaders: 1,
+            localIdentName: '[name]--[local]--[hash:base64:8]'
+          }
+        },
+        'postcss-loader'
+      ]},
     ],
   },
   devtool: isProd ? false : 'source-map',
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.css'],
   },
   devServer: {
     port: WDS_PORT,

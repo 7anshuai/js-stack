@@ -2,6 +2,7 @@
 
 import compression from 'compression'
 import express from 'express'
+import csshook from 'css-modules-require-hook/preset' // eslint-disable-line no-unused-vars
 
 import { STATIC_PATH, WEB_PORT } from '../shared/config'
 import { isProd } from '../shared/util'
