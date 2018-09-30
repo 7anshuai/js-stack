@@ -8,6 +8,7 @@ import { WDS_PORT } from './src/shared/config'
 import { isProd } from './src/shared/util'
 
 export default {
+  mode: isProd ? 'production' : 'development',
   entry: [
     'react-hot-loader/patch',
     './src/client',
