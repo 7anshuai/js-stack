@@ -1,7 +1,6 @@
 // @flow
 
 import React from 'react'
-import { Button } from 'react-toolbox/lib/button'
 
 type Props = {
   label: string,
@@ -9,6 +8,6 @@ type Props = {
 }
 
 const HelloButton = ({ label, handleClick }: Props) =>
-  <Button onClick={handleClick} label={label} raised primary />
+  <button className='input-reset' onClick={handleClick}>{label}</button>
 
 export default HelloButton

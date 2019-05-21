@@ -1,5 +1,3 @@
-// @flow
-
 import path from 'path'
 
 import webpack from 'webpack'
@@ -27,10 +25,9 @@ export default {
         {
           loader: 'css-loader',
           options: {
-            modules: true,
+            modules: false,
             sourceMap: true,
             importLoaders: 1,
-            localIdentName: '[name]--[local]--[hash:base64:8]'
           }
         },
         'postcss-loader'

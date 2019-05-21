@@ -17,6 +17,7 @@ import {
     HELLO_ASYNC_PAGE_ROUTE
 } from './routes'
 
+import 'tachyons'
 import './index.css'
 
 const App = () =>

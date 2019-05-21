@@ -32,11 +32,11 @@ const wrapApp = (AppComponent, reduxStore) =>
     </BrowserRouter>
   </Provider>
 
-ReactDOM.render(wrapApp(App, store), rootEl)
+ReactDOM.hydrate(wrapApp(App, store), rootEl)
 
 if (module.hot) {
   module.hot.accept('../shared/app', () => {
     const NextApp = require('../shared/app').default
-    ReactDOM.render(wrapApp(NextApp, store), rootEl)
+    ReactDOM.hydrate(wrapApp(NextApp, store), rootEl)
   })
 }
