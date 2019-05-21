@@ -17,6 +17,8 @@ import {
     HELLO_ASYNC_PAGE_ROUTE
 } from './routes'
 
+import './index.css'
+
 const App = () =>
   <div>
     <Helmet titleTemplate={`%s | ${APP_NAME}`} defaultTitle={APP_NAME} />

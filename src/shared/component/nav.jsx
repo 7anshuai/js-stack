@@ -12,21 +12,22 @@ import {
   NOT_FOUND_PAGE_ROUTE,
 } from '../routes'
 import {APP_NAME} from '../config'
-import style from './nav.css'
 
 const Nav = () =>
   <AppBar title={APP_NAME}>
-    <Navigation type='horizontal' className={style.nav}>
-      {[
-        { route: HOME_PAGE_ROUTE, label: 'Home' },
-        { route: HELLO_PAGE_ROUTE, label: 'Say Hello' },
-        { route: HELLO_ASYNC_PAGE_ROUTE, label: 'Say Hello Asynchronously' },
-        { route: NOT_FOUND_PAGE_ROUTE, label: '404 Demo' },
-      ].map(link => (
-        <li key={link.route}>
-          <NavLink to={link.route} exact>{link.label}</NavLink>
-        </li>
-      ))}
+    <Navigation type='horizontal' className='nav'>
+      <ul>
+        {[
+          { route: HOME_PAGE_ROUTE, label: 'Home' },
+          { route: HELLO_PAGE_ROUTE, label: 'Say Hello' },
+          { route: HELLO_ASYNC_PAGE_ROUTE, label: 'Say Hello Asynchronously' },
+          { route: NOT_FOUND_PAGE_ROUTE, label: '404 Demo' },
+        ].map(link => (
+          <li key={link.route}>
+            <NavLink to={link.route} exact>{link.label}</NavLink>
+          </li>
+        ))}
+      </ul>
     </Navigation>
   </AppBar>
 

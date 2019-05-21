@@ -1,10 +1,11 @@
+const postcssPresetEnv = require('postcss-preset-env');
 module.exports = {
-  plugins: {
-    'postcss-import': {
-      root: __dirname,
-    },
-    'postcss-mixins': {},
-    'postcss-each': {},
-    'postcss-cssnext': {}
-  },
+  plugins: [
+    require('postcss-import'),
+    postcssPresetEnv({
+      browsers: ['last 2 versions', '> 5%'],
+      stage: 0
+    }),
+    require('cssnano')
+  ]
 };

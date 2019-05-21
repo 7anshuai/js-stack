@@ -14,15 +14,15 @@
     "compression": "^1.7.3",
     "css-loader": "^1.0.0",
     "css-modules-require-hook": "^4.2.3",
+    "cssnano": "^4.1.10",
     "express": "^4.16.3",
     "immutable": "4.0.0-rc.9",
     "isomorphic-fetch": "^2.2.1",
+    "mini-css-extract-plugin": "^0.6.0",
     "postcss": "^7.0.2",
-    "postcss-cssnext": "^3.1.0",
-    "postcss-each": "^0.10.0",
     "postcss-import": "^12.0.0",
     "postcss-loader": "^3.0.0",
-    "postcss-mixins": "^6.2.0",
+    "postcss-preset-env": "^6.6.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-helmet": "^5.2.0",
@@ -66,7 +66,7 @@
   },
   "scripts": {
     "start": "node lib/server",
-    "build": "rimraf lib dist && babel src -d lib --ignore .test.js && cross-env NODE_ENV=production webpack -p --progress",
+    "build": "rimraf lib dist && babel src -d lib --ignore .test.js --copy-files && cross-env NODE_ENV=production webpack -p --progress",
     "dev:client": "webpack-dev-server --progress",
     "dev:server": "nodemon -e js,jsx --ignore lib --ignore dist --exec babel-node src/server",
     "lint": "eslint src webpack.config.babel.js --ext .js,.jsx && flow",
@@ -82,8 +82,11 @@
     "url": "git+https://github.com/7anshuai/js-stack.git"
   },
   "keywords": [
-    "travis-ci",
-    "ci"
+    "react",
+    "react-router",
+    "react-toolbox",
+    "redux",
+    "server-side-rendering"
   ],
   "author": "Tan Shuai",
   "bugs": {

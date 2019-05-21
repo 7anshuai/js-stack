@@ -29,6 +29,7 @@ const renderApp = (location: string, plainPartialState: ?Object, routerContext: 
         ${head.meta}
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
         <link rel="stylesheet" href="${STATIC_PATH}/css/style.css">
       </head>
       <body>

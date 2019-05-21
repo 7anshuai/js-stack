@@ -3,6 +3,7 @@
 import path from 'path'
 
 import webpack from 'webpack'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 
 import { WDS_PORT } from './src/shared/config'
 import { isProd } from './src/shared/util'
@@ -22,7 +23,7 @@ export default {
     rules: [
       { test: /\.(js|jsx)$/, use: 'babel-loader', exclude: /node_modules/ },
       { test: /\.css$/, use: [
-        'style-loader',
+        isProd ? MiniCssExtractPlugin.loader : 'style-loader',
         {
           loader: 'css-loader',
           options: {
@@ -47,10 +48,15 @@ export default {
       'Access-Control-Allow-Origin': '*'
     }
   },
-  plugins: [
+  plugins: (isProd ? [
+      new MiniCssExtractPlugin({
+        filename: 'css/style.css',
+        allChunks: true
+      })
+    ] : []).concat([
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
-  ]
+  ])
 }
